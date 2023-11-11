@@ -7,4 +7,3 @@ class ProdutosSchema(BaseModel):
     titulo: str
     descricao: Optional[str] = None
     preco: PositiveInt
-    email: str

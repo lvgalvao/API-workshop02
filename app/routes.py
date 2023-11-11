@@ -11,7 +11,7 @@ router = APIRouter()
 
 @router.get("/")
 def ola_mundo():
-    return {"Olá": "Mundo"}
+    return {"Olá": "Print!"}
 
 
 @router.get("/produtos", response_model=List[ProdutosSchema])
