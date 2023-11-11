@@ -25,7 +25,7 @@ def test_tamanho_da_lista_de_produtos():
     assert len(response.json()) == 3
 
 
-def test_pega_um_prdoduto():
+def test_pega_um_produto():
     response = client.get("/produtos/1")
     assert response.json() == {
         "id": 1,
