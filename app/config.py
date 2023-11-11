@@ -15,20 +15,15 @@ from dotenv import load_dotenv
 # Importa o módulo os para interagir com o sistema operacional e
 # load_dotenv do pacote python-dotenv para carregar variáveis de ambiente de um arquivo .env.
 
-load_dotenv()  # Carrega as variáveis de ambiente do arquivo .env.
+load_dotenv(dotenv_path=".env.prod")
 
-# Acessa e armazena variáveis de ambiente específicas (credenciais do banco de dados).
 db_user = os.getenv("POSTGRES_USER")
 db_password = os.getenv("POSTGRES_PASSWORD")
 db_name = os.getenv("POSTGRES_DB")
 db_host = os.getenv("DB_HOST")
 db_port = os.getenv("DB_PORT")
 
-
-# Constrói a URL de conexão do banco de dados usando as variáveis de ambiente.
 DATABASE_URL = f"postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
-
-# Cria um motor de banco de dados SQLAlchemy que gerencia as conexões à base de dados.
 engine = create_engine(DATABASE_URL)
 
 # Cria uma fábrica de sessões do SQLAlchemy que será usada para criar sessões.
